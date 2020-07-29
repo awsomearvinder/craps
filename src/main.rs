@@ -7,7 +7,7 @@ fn roll2die<T: Rng>(mut rng: T) -> (i32, i32) {
 }
 fn main() {
     let mut thread_rng = SmallRng::seed_from_u64(1);
-    let mut string = String::new();
+    let mut string = String::with_capacity(10_000_000);
     for _ in 0..1_000_000 {
         run(&mut thread_rng, &mut string);
     }
